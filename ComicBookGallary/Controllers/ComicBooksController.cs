@@ -9,9 +9,15 @@ namespace ComicBookGallary.Controllers
     //inherit base class controller
     public class ComicBooksController: Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "This is comic book controller";
+            //Create RedirectResult()
+            if(DateTime.Today.DayOfWeek == DayOfWeek.Saturday)
+            {
+                return Redirect("/");
+            }
+            // create object constructor for contentResult()
+            return Content("Hello world");
         }
 
     }
